@@ -121,29 +121,5 @@
   </div>
   </div>
  </body>
- <script>
-    var n = document.documentElement.clientHeight,
-        e = document.documentElement.clientWidth,
-        t = n / e;
-    $(".page,.fullvid").height(n);
-    // 9/16=0.5625视频宽高比
-    if (t > .5625) {
-        $(".videobox").width(n / .5625);
-        $(".videobox").height(n);
-        $(".videobox").css("marginLeft", 0 - (n / .5625 - e) / 2);
-        $(".videobox").css("marginTop", 0);
-    }
-    else if (t < .5625) {
-        $(".videobox").width(e);
-        $(".videobox").height(.5625 * e);
-        $(".videobox").css("marginLeft", 0);
-        $(".videobox").css("marginTop", 0 - (.5625 * e - n) / 2);
-    }
-    else {
-        $(".videobox").width(e);
-        $(".videobox").height(n);
-        $(".videobox").css("marginLeft", 0);
-        $(".videobox").css("marginTop", 0);
-    }
-</script>
+
 </html>
