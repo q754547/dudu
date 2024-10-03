@@ -102,6 +102,7 @@
    </footer>&nbsp;&nbsp;
 
 </footer></div><div id="bg"></div><script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
       <script src="./js/skel.min.js"></script>
       <script src="./js/util.js"></script>
       <script src="./js/main.js"></script>
@@ -121,5 +122,29 @@
   </div>
   </div>
  </body>
-
+<script>
+    var n = document.documentElement.clientHeight,
+        e = document.documentElement.clientWidth,
+        t = n / e;
+    $(".page,.fullvid").height(n);
+    // 9/16=0.5625视频宽高比
+    if (t > .5625) {
+        $(".videobox").width(n / .5625);
+        $(".videobox").height(n);
+        $(".videobox").css("marginLeft", 0 - (n / .5625 - e) / 2);
+        $(".videobox").css("marginTop", 0);
+    }
+    else if (t < .5625) {
+        $(".videobox").width(e);
+        $(".videobox").height(.5625 * e);
+        $(".videobox").css("marginLeft", 0);
+        $(".videobox").css("marginTop", 0 - (.5625 * e - n) / 2);
+    }
+    else {
+        $(".videobox").width(e);
+        $(".videobox").height(n);
+        $(".videobox").css("marginLeft", 0);
+        $(".videobox").css("marginTop", 0);
+    }
+</script>
 </html>
